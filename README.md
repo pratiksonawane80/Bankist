@@ -1,6 +1,7 @@
 # Bankist
 
 User Accounts:
+
 Account1
 Owner: 'Jonas Schmedtmann'
 Id: js
