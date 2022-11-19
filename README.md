@@ -3,11 +3,11 @@
 User Accounts:
 
 Account1
-Owner: 'Jonas Schmedtmann',
-Id: js,
+Owner: 'Pratik Sonawane',
+Id: ps,
 Pin: 1111
 
 Account2
-Owner: 'Jessica Davis',
-Id: jd,
+Owner: 'Shardul Parlikar',
+Id: sp,
 Pin: 2222

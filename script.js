@@ -1,16 +1,7 @@
 'use strict';
 
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// BANKIST APP
-
-/////////////////////////////////////////////////
-// Data
-
-// DIFFERENT DATA! Contains movement dates, currency and locale
-
 const account1 = {
-  owner: 'Jonas Schmedtmann',
+  owner: 'Pratik Sonawane',
   movements: [200, 455.23, -306.5, 25000, -642.21, -133.9, 79.97, 1300],
   interestRate: 1.2, // %
   pin: 1111,
@@ -25,12 +16,12 @@ const account1 = {
     '2020-07-28T23:36:17.929Z',
     '2020-08-01T10:51:36.790Z',
   ],
-  currency: 'EUR',
-  locale: 'pt-PT', // de-DE
+  currency: 'INR',
+  locale: 'en-US', // de-DE
 };
 
 const account2 = {
-  owner: 'Jessica Davis',
+  owner: 'Shardul Parlikar',
   movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
   interestRate: 1.5,
   pin: 2222,
@@ -45,7 +36,7 @@ const account2 = {
     '2020-06-25T18:49:59.371Z',
     '2020-07-26T12:01:20.894Z',
   ],
-  currency: 'USD',
+  currency: 'INR',
   locale: 'en-US',
 };
 
@@ -92,10 +83,6 @@ const formatMovementDate = function (date, locale) {
   if (daysPassed === 1) return 'Yesterday';
   if (daysPassed <= 7) return `${daysPassed} days ago`;
 
-  // const day = `${date.getDate()}`.padStart(2, 0);
-  // const month = `${date.getMonth() + 1}`.padStart(2, 0);
-  // const year = date.getFullYear();
-  // return `${day}/${month}/${year}`;
   return new Intl.DateTimeFormat(locale).format(date);
 };
 
@@ -217,11 +204,6 @@ const startLogOutTimer = function () {
 // Event handlers
 let currentAccount, timer;
 
-// FAKE ALWAYS LOGGED IN
-// currentAccount = account1;
-// updateUI(currentAccount);
-// containerApp.style.opacity = 100;
-
 btnLogin.addEventListener('click', function (e) {
   // Prevent form from submitting
   e.preventDefault();
@@ -248,8 +230,6 @@ btnLogin.addEventListener('click', function (e) {
       year: 'numeric',
       // weekday: 'long',
     };
-    // const locale = navigator.language;
-    // console.log(locale);
 
     labelDate.textContent = new Intl.DateTimeFormat(
       currentAccount.locale,
